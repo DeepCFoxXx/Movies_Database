@@ -5,4 +5,10 @@ var Film = function(options) {
   this.genre = options.genre;
 }
 
+Film.prototype = {
+  addReview: function(review) {
+    this.reviews.push(review);
+  }
+}
+
 module.exports = Film;

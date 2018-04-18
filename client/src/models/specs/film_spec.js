@@ -24,4 +24,9 @@ describe('Film', function() {
     assert.equal(0, film.reviews.length);
   });
 
+  it('should be able to add to reviews', function() {
+    film.addReview();
+    assert.equal(1, film.reviews.length);
+  });
+
 });
