@@ -8,7 +8,7 @@ describe('Film', function() {
     film = new Film({
       title: 'Aliens',
       actors: 'Sigourney Weaver',
-      genres: ['Sci Fi']
+      genre: ['Sci Fi']
     });
   });
 
@@ -20,6 +20,10 @@ describe('Film', function() {
     assert.equal(film.actors, 'Sigourney Weaver');
   });
 
+  it('should have genre', function() {
+    assert.equal(film.genre, 'Sci Fi');
+  });
+
   it('should start empty', function() {
     assert.equal(0, film.reviews.length);
   });
@@ -28,5 +32,7 @@ describe('Film', function() {
     film.addReview();
     assert.equal(1, film.reviews.length);
   });
+
+
 
 });
