@@ -20,4 +20,8 @@ describe('Film', function() {
     assert.equal(film.actors, 'Sigourney Weaver');
   });
 
+  it('should start empty', function() {
+    assert.equal(0, film.reviews.length);
+  });
+
 });
