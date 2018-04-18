@@ -29,8 +29,12 @@ Films.prototype = {
       films.push(film);
     }
     return films;
+  },
+  add: function(newFilm, callback){
+    var filmToAdd = JSON.stringify(newFilm);
+    console.log("NEW FILM", filmToAdd);
+    this.makeRequest("POST", "http://localhost:3000/api/films", callback, filmToAdd);
   }
 };
-
 
 module.exports = Films;
