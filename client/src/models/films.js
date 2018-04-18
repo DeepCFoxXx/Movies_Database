@@ -20,6 +20,15 @@ Films.prototype = {
       var films = self.populateFilms(results);
       callback(films);
     });
+  },
+  populateFilms: function(results){
+    var films = [];
+
+    for(var result of results){
+      var film = new Film(result);
+      films.push(film);
+    }
+    return films;
   }
 };
 
