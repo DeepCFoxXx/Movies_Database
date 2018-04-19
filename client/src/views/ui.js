@@ -44,23 +44,31 @@ render: function(films) {
   }
 },
 
-  createForm: function(){
-    var div = document.createElement('div');
-    var form = document.createElement('form');
-    var body = document.querySelector('body');
+createForm: function(){
+  var div = document.createElement('div');
+  var form = document.createElement('form');
+  var body = document.querySelector('body');
 
-    var titleInput = document.createElement('input');
-    titleInput.setAttribute("name", "title");
-    form.appendChild(titleInput);
+  var titleInput = document.createElement('input');
+  titleInput.setAttribute("name", "title");
+  form.appendChild(titleInput);
 
-    var actorsInput = document.createElement('input');
-    actorsInput.setAttribute("name", "actors");
-    form.appendChild(actorsInput);
+  var actorsInput = document.createElement('input');
+  actorsInput.setAttribute("name", "actors");
+  form.appendChild(actorsInput);
 
-    var button = document.createElement('button');
-    button.type = 'submit';
-    button.innerText = 'Add Film';
-    form.appendChild(button);
+  var button = document.createElement('button');
+  button.type = 'submit';
+  button.innerText = 'Add Film';
+  form.appendChild(button);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var newFilm = {
+      title: e.target.title.value,
+      actors: e.target.actors.value.split(',')
+    }
+
   }
 }
 
