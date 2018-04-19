@@ -42,6 +42,17 @@ render: function(films) {
 
     container.appendChild(li);
   }
+},
+
+  createForm: function(){
+    var div = document.createElement('div');
+    var form = document.createElement('form');
+    var body = document.querySelector('body');
+
+    var titleInput = document.createElement('input');
+    titleInput.setAttribute("name", "title");
+    form.appendChild(titleInput);
+  }
 }
 
 module.exports = UI;
