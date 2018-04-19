@@ -52,6 +52,15 @@ render: function(films) {
     var titleInput = document.createElement('input');
     titleInput.setAttribute("name", "title");
     form.appendChild(titleInput);
+
+    var actorsInput = document.createElement('input');
+    actorsInput.setAttribute("name", "actors");
+    form.appendChild(actorsInput);
+
+    var button = document.createElement('button');
+    button.type = 'submit';
+    button.innerText = 'Add Film';
+    form.appendChild(button);
   }
 }
 
