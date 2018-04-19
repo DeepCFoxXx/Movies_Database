@@ -26,4 +26,15 @@ filmRouter.put('/:id', function(req, res) {
   res.json({data: films});
 });
 
+filmRouter.post('/', function(req, res) {
+  console.log(req.body)
+  var film = new Film({
+    title: req.body.title,
+    actors: req.body.actors
+  });
+  query.add(film,function(results){
+    res.json(results);
+  });
+});
+
 module.exports = filmRouter;
