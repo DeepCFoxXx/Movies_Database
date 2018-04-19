@@ -11,4 +11,10 @@ filmRouter.get('/:id', function(req, res){
   res.json(films[req.params.id]);
 });
 
+filmRouter.get('/', function(req, res) {
+  query.all(function(results){
+    res.json(results);
+  });
+});
+
 module.exports = filmRouter;
