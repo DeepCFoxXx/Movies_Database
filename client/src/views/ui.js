@@ -68,8 +68,17 @@ createForm: function(){
       title: e.target.title.value,
       actors: e.target.actors.value.split(',')
     }
+    var films = new Films();
+    films.add(newFilm, function(data){
+      console.log(data);
+    });
 
-  }
+  });
+
+  div.appendChild(form);
+  body.insertBefore( div, body.firstChild );
+}
+
 }
 
 module.exports = UI;
