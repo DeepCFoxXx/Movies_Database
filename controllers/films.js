@@ -17,4 +17,13 @@ filmRouter.get('/', function(req, res) {
   });
 });
 
+filmRouter.put('/:id', function(req, res) {
+  var film = new Film({
+    title: req.body.title,
+    actors: req.body.actors
+  });
+  films[req.params.id] = film;
+  res.json({data: films});
+});
+
 module.exports = filmRouter;
