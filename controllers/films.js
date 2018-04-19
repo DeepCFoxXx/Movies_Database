@@ -42,4 +42,15 @@ filmRouter.delete('/:id', function(req, res) {
   res.json({data: films});
 });
 
+filmRouter.post('/:id/reviews', function(req, res) {
+  var film = films[req.params.id];
+  var review1 = new Review({
+    comment: "Great",
+    rating: 8,
+    author: "Kara"
+  });
+  film.addReview(review1);
+  res.json({data: films});
+});
+
 module.exports = filmRouter;
