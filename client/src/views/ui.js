@@ -14,6 +14,11 @@ UI.prototype = {
     var p = document.createElement('p');
     p.innerText = label + text;
     return p;
-  }
+  },
+
+  appendText: function(element, text, label) {
+    var pTag = this.createText(text, label);
+    element.appendChild(pTag);
+  },
 
 module.exports = UI;
